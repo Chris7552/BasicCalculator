@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Run JavaScript</title>
+</head>
+<body>
+  <h1>JavaScript Number Operations</h1>
+  <p id="output"></p>
+
+  <script>
+    window.onload = function() {
+      let x = parseFloat(prompt("Enter the first number:"));
+      let y = parseFloat(prompt("Enter the second number:"));
+
+      if (isNaN(x) || isNaN(y)) {
+        document.getElementById("output").innerText = "Invalid input.";
+        return;
+      }
+
+      let sum = x + y;
+      let product = x * y;
+      let comparison = (x > y) ? `${x} is bigger than ${y}` : `${y} is bigger than ${x}`;
+
+      document.getElementById("output").innerHTML = 
+        `The sum of ${x} and ${y} is ${sum}.<br>` +
+        `The product of ${x} and ${y} is ${product}.<br>` +
+        comparison;
+    };
+  </script>
+</body>
+</html>
